@@ -1,0 +1,42 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #255625;
+}
+
+#gameboard {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-color: #002a80;
+}
+
+#rollarea {
+    position: relative;
+    left: 20%;
+    right: 20%;
+    top: 20%;
+    bottom: 20%;
+    width: 60%;
+    height: 60%;
+    background-color: #c12e2a;
+}
+
+.die {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    background-color: purple;
+    margin: auto;
+    text-align: center;
+    top: 45%;
+}
+
+#dieContainer {
+    position: relative;
+    margin: auto;
+    top: 30%;
+}

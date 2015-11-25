@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html ng-app="yahtzee">
+<head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <% include templates/css_imports.ejs %>
+</head>
+<body>
+
+<% include templates/header.ejs %>
+    <div ng-controller="game_cntl" id="gameboard">
+        <div id="rollarea">
+            <div id="dieContainer">
+                <table class="table">
+                    <tr>
+                        <td ng-repeat="dice in die track by dice.id">
+                            <div id="{{dice.id}}" ng-click="toggleRoll(dice.id)" class="die">
+                                <img src="{{dice.src}}">
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+        </div>
+        <button style="float: bottom;" class="btn-primary btn-sm" ng-click="rollDice(); deselectAll()   ">Roll Dice</button>
+    </div>
+
+</body>
+
+<% include templates/js_imports %>
+<script type="text/javascript" src="javascripts/gamecntl.js"></script>
+
+</html>
