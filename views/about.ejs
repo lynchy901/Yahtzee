@@ -10,6 +10,9 @@
 <% include templates/header.ejs %>
     <div ng-controller="game_cntl" id="gameboard">
         <div id="rollarea">
+            <p>Score: {{score}}</p>
+            <p>Rolls Left: {{ 3 - roll}}</p>
+            <p>Round: {{round}}</p>
             <div id="dieContainer">
                 <table class="table">
                     <tr>
@@ -23,7 +26,7 @@
             </div>
 
         </div>
-        <button style="float: bottom;" class="btn-primary btn-sm" ng-click="rollDice(); deselectAll()   ">Roll Dice</button>
+        <button style="float: bottom;" class="btn-primary btn-sm" ng-click="rollDice(); roll = roll + 1">Roll Dice</button>
     </div>
 
 </body>
