@@ -1,42 +1,58 @@
+
 <!DOCTYPE html>
-<html ng-app="yahtzee">
+<html lang="en">
 <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-    <% include templates/css_imports.ejs %>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>Nathan Lynch</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" type="text/css" href="/bootstrap/css/bootstrap.css">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
 </head>
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div>
+            <ul class="nav navbar-nav">
+                <li><a href="/">Home</a></li>
+                <li class="active"><a href="/about">About</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
 <body>
 
+<div class="container">
 
-<% include templates/header.ejs %>
-    <div class="container" ng-controller="game_cntl" id="gameboard">
-        <% include templates/modal.ejs%>
-        <div id="rollarea">
-            <p>Score: {{score}}</p>
-            <p>Rolls Left: {{ 3 - roll}}</p>
-            <p>Round: {{round}}</p>
-            <div id="dieContainer">
-                <table class="table">
-                    <tr>
-                        <td ng-repeat="dices in die track by dices.id">
-                            <div id="{{dices.id}}" ng-click="toggleRoll(dices.id)" class="die">
-                                <img src="{{dices.src}}">
-                            </div>
-                        </td>
-                    </tr>
-                </table>
-            </div>
-        </div>
-        <button id="rollDiceButton" style="float: bottom;" class="btn-primary btn-sm" ng-click="rollDice(); roll = roll + 1">Roll Dice</button>
-
-
+    <div class="starter-template">
+        <h1>Project Made by Nathan Lynch</h1>
+        <p class="lead"></p>
     </div>
+     <div class = container-fluid>
+         <h2>About the Author</h2>
+         <p> I am a junior at Penn State in the college of IST. I am in the design an development IST <br>
+             major as well as a cyber security SRA major</p>
+     </div>
+</div><!-- /.container -->
 
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="/jquery/dist/jquery.min.js"><\/script>')</script>
+<script src="/bootstrap/js/bootstrap.min.js"></script>
 </body>
-
-<% include templates/js_imports %>
-<script type="text/javascript" src="javascripts/gamecntl.js"></script>
-<script type="text/javascript" src="javascripts/rulecntl.js"></script>
-
-
 </html>
