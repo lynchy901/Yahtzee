@@ -7,8 +7,10 @@
 </head>
 <body>
 
+
 <% include templates/header.ejs %>
-    <div ng-controller="game_cntl" id="gameboard">
+    <div class="container" ng-controller="game_cntl" id="gameboard">
+        <% include templates/modal.ejs%>
         <div id="rollarea">
             <p>Score: {{score}}</p>
             <p>Rolls Left: {{ 3 - roll}}</p>
@@ -16,22 +18,25 @@
             <div id="dieContainer">
                 <table class="table">
                     <tr>
-                        <td ng-repeat="dice in die track by dice.id">
-                            <div id="{{dice.id}}" ng-click="toggleRoll(dice.id)" class="die">
-                                <img src="{{dice.src}}">
+                        <td ng-repeat="dices in die track by dices.id">
+                            <div id="{{dices.id}}" ng-click="toggleRoll(dices.id)" class="die">
+                                <img src="{{dices.src}}">
                             </div>
                         </td>
                     </tr>
                 </table>
             </div>
-
         </div>
-        <button style="float: bottom;" class="btn-primary btn-sm" ng-click="rollDice(); roll = roll + 1">Roll Dice</button>
+        <button id="rollDiceButton" style="float: bottom;" class="btn-primary btn-sm" ng-click="rollDice(); roll = roll + 1">Roll Dice</button>
+
+
     </div>
 
 </body>
 
 <% include templates/js_imports %>
 <script type="text/javascript" src="javascripts/gamecntl.js"></script>
+<script type="text/javascript" src="javascripts/rulecntl.js"></script>
+
 
 </html>
